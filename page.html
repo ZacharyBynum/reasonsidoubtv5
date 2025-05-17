@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argument Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-title-container">
+            <a href="index.html" class="back-button">
+                <span class="material-icons">arrow_back</span></a>
+            <h1 id="pageHeaderTitle"><a href="index.html">ReasonsIDoubt.com</a></h1>
+            <button id="themeToggleButton" class="theme-toggle-button" aria-label="Switch to light mode">
+                <span class="material-icons">light_mode</span>
+            </button>
+        </header>
+
+        <main>
+            <article class="page-content" id="pageContent">
+                <h2 id="argumentTitle">Loading Argument...</h2>
+                
+                <section id="christianArgumentSection">
+                    <h3>The Argument</h3>
+                    <div id="christianArgumentDetail">
+                        <p>Loading details...</p>
+                    </div>
+                </section>
+                
+                <section id="counterResponseSection">
+                    <h3 id="counterTitle">Counter Response</h3>
+                    <div id="counterResponseContent">
+                        <p>Loading response...</p>
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>© ReasonsIDoubt.com</p>
+    </footer>
+
+    <script src="content.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Function to render the manuscript chart if needed.
+        // This function is called from script.js after content is loaded.
+        function renderManuscriptChartIfNeeded() {
+            const canvasElement = document.getElementById('manuscriptDistributionChart');
+            if (canvasElement && typeof Chart !== 'undefined') {
+                if (Chart.getChart(canvasElement)) {
+                    Chart.getChart(canvasElement).destroy(); 
+                }
+                
+                const ctx = canvasElement.getContext('2d');
+                const docStyle = getComputedStyle(document.documentElement);
+
+                // Use the new CSS variables for chart colors
+                const primaryColor = docStyle.getPropertyValue('--primary-color').trim() || '#8ab4f8'; // Fallback
+                const textColor = docStyle.getPropertyValue('--text-color').trim() || '#e8eaed';
+                const textSecondaryColor = docStyle.getPropertyValue('--text-secondary-color').trim() || '#9aa0a6';
+                const borderColor = docStyle.getPropertyValue('--border-color').trim() || '#3c4043';
+                const cardBackgroundColor = docStyle.getPropertyValue('--card-background-color').trim() || '#2c2c2c';
+                
+                // Chart.js specific theme variables (defined in CSS, used as fallback here if needed)
+                const chartGridColor = docStyle.getPropertyValue('--chart-grid-color').trim() || borderColor;
+                const chartTicksColor = docStyle.getPropertyValue('--chart-ticks-color').trim() || textSecondaryColor;
+                const chartTitleColor = docStyle.getPropertyValue('--chart-title-color').trim() || textSecondaryColor;
+                const chartTooltipBg = docStyle.getPropertyValue('--chart-tooltip-bg').trim() || cardBackgroundColor;
+                const chartTooltipText = docStyle.getPropertyValue('--chart-tooltip-text').trim() || textColor;
+                const chartTooltipBorder = docStyle.getPropertyValue('--chart-tooltip-border').trim() || borderColor;
+
+
+                function lightenDarkenColor(col, amt) {
+                    let usePound = false;
+                    if (col && col[0] === "#") { // Added null check for col
+                        col = col.slice(1);
+                        usePound = true;
+                    } else if (!col) { // Handle undefined or null col
+                        return primaryColor; // Return a default color
+                    }
+                    const num = parseInt(col, 16);
+                    if (isNaN(num)) return primaryColor; // Fallback if col is not a valid hex after stripping #
+
+                    let r = (num >> 16) + amt;
+                    if (r > 255) r = 255; else if (r < 0) r = 0;
+                    let b = ((num >> 8) & 0x00FF) + amt;
+                    if (b > 255) b = 255; else if (b < 0) b = 0;
+                    let g = (num & 0x0000FF) + amt;
+                    if (g > 255) g = 255; else if (g < 0) g = 0;
+                    const newColor = (g | (b << 8) | (r << 16)).toString(16).padStart(6, '0');
+                    return (usePound ? "#" : "") + newColor;
+                }
+                
+                const hoverColor = lightenDarkenColor(primaryColor.startsWith('#') ? primaryColor : '#8ab4f8', 20);
+        
+                const data = {
+                    labels: ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th'],
+                    datasets: [{
+                        label: 'Number of Manuscripts',
+                        data: [0, 9, 75, 98, 119, 141, 92, 83, 231, 447, 895, 1273, 1131, 966, 473, 445, 163],
+                        backgroundColor: primaryColor,
+                        borderColor: primaryColor,
+                        borderWidth: 1,
+                        hoverBackgroundColor: hoverColor,
+                        hoverBorderColor: hoverColor,
+                        borderRadius: 4,
+                    }]
+                };
+        
+                const config = {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        animation: { duration: 800, easing: 'easeInOutQuart' },
+                        plugins: {
+                            legend: { display: false },
+                            title: { display: false },
+                            tooltip: {
+                                backgroundColor: chartTooltipBg,
+                                titleColor: chartTooltipText,
+                                bodyColor: chartTooltipText,
+                                borderColor: chartTooltipBorder,
+                                borderWidth: 1,
+                                padding: 10,
+                                cornerRadius: 8,
+                                boxPadding: 3,
+                                callbacks: {
+                                    title: function(tooltipItems) {
+                                        return tooltipItems[0].label + ' Century';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: chartGridColor, drawBorder: false },
+                                ticks: { color: chartTicksColor, padding: 10 },
+                                title: { display: true, text: 'Number of Manuscripts', color: chartTitleColor, font: { weight: '500', size: '0.9em' }, padding: { top: 0, bottom: 10 } }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { color: chartTicksColor, padding: 10 },
+                                title: { display: true, text: 'Century', color: chartTitleColor, font: { weight: '500', size: '0.9em' }, padding: { top: 10, bottom: 0 } }
+                            }
+                        },
+                        interaction: { intersect: false, mode: 'index' }
+                    }
+                };
+                new Chart(ctx, config);
+            }
+        }
+        </script>
+</body>
+</html>

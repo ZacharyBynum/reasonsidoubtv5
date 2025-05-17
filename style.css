@@ -1,0 +1,1955 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    /* Dark Theme (Default) */
+    --primary-color-dark: #8ab4f8; /* Light blue for accents */
+    --link-color-dark: #8ab4f8;
+    --background-color-dark: #1e1e1e; /* Very dark grey, almost black */
+    --card-background-color-dark: #2c2c2c; /* Dark grey */
+    --text-color-dark: #e8eaed; /* Light grey for text */
+    --text-secondary-color-dark: #9aa0a6; /* Medium grey for secondary text */
+    --border-color-dark: #3c4043; /* Darker grey for borders */
+    --tag-bg-color-dark: #3c4043;
+    --tag-text-color-dark: #bdc1c6;
+    --tag-active-bg-color-dark: var(--primary-color-dark);
+    --tag-active-text-color-dark: var(--background-color-dark);
+    --box-shadow-color-dark: rgba(0,0,0,0.3);
+    --box-shadow-hover-color-dark: rgba(0,0,0,0.4);
+    --header-bg-color-dark: #1e1e1e; /* For page.html header consistency */
+    --button-hover-bg-dark: #353535;
+    --button-hover-text-dark: var(--primary-color-dark);
+    --icon-color-dark: var(--primary-color-dark);
+    --search-icon-color-dark: var(--text-secondary-color-dark);
+    --clear-search-hover-bg-dark: rgba(255, 255, 255, 0.1);
+    --table-header-bg-dark: #3a3a3a;
+    --table-row-even-bg-dark: #272727;
+    --table-row-hover-bg-dark: #383838;
+    --sidebar-header-bg-dark: var(--primary-color-dark);
+    --sidebar-header-text-dark: #121212; /* Darker text for contrast on primary color */
+    --sidebar-nav-item-hover-bg-dark: rgba(138, 180, 248, 0.1); /* Light blue transparent */
+    --sidebar-nav-item-active-bg-dark: rgba(138, 180, 248, 0.15);
+    --sidebar-nav-item-active-border-dark: var(--primary-color-dark);
+    --sidebar-icon-color-dark: var(--primary-color-dark);
+    --card-header-bg-dark: var(--primary-color-dark);
+    --card-header-text-dark: #121212; /* Darker text for contrast */
+    --verse-ref-color-dark: var(--primary-color-dark);
+    --analysis-border-color-dark: rgba(255, 255, 255, 0.08);
+    --blockquote-bg-dark: rgba(138, 180, 248, 0.05);
+    --blockquote-border-dark: var(--primary-color-dark);
+    --footer-bg-dark: #2c2c2c;
+    --footer-text-dark: var(--text-secondary-color-dark);
+    --footer-border-dark: var(--border-color-dark);
+
+
+    /* Light Theme */
+    --primary-color-light: #1a73e8; /* Google Blue */
+    --link-color-light: #1a73e8;
+    --background-color-light: #ffffff; /* White */
+    --card-background-color-light: #f8f9fa; /* Very light grey */
+    --text-color-light: #202124; /* Nearly black for text */
+    --text-secondary-color-light: #5f6368; /* Dark grey for secondary text */
+    --border-color-light: #dadce0; /* Light grey for borders */
+    --tag-bg-color-light: #e8eaed;
+    --tag-text-color-light: #3c4043;
+    --tag-active-bg-color-light: var(--primary-color-light);
+    --tag-active-text-color-light: #ffffff;
+    --box-shadow-color-light: rgba(0,0,0,0.1);
+    --box-shadow-hover-color-light: rgba(0,0,0,0.15);
+    --header-bg-color-light: #ffffff;
+    --button-hover-bg-light: #e8f0fe; /* Light blue for hover */
+    --button-hover-text-light: var(--primary-color-light);
+    --icon-color-light: var(--primary-color-light);
+    --search-icon-color-light: var(--text-secondary-color-light);
+    --clear-search-hover-bg-light: rgba(0, 0, 0, 0.05);
+    --table-header-bg-light: #e8eaed;
+    --table-row-even-bg-light: #f8f9fa;
+    --table-row-hover-bg-light: #e8f0fe;
+    --sidebar-header-bg-light: var(--primary-color-light);
+    --sidebar-header-text-light: #ffffff;
+    --sidebar-nav-item-hover-bg-light: rgba(26, 115, 232, 0.1); /* Primary color transparent */
+    --sidebar-nav-item-active-bg-light: rgba(26, 115, 232, 0.15);
+    --sidebar-nav-item-active-border-light: var(--primary-color-light);
+    --sidebar-icon-color-light: var(--primary-color-light);
+    --card-header-bg-light: var(--primary-color-light);
+    --card-header-text-light: #ffffff;
+    --verse-ref-color-light: var(--primary-color-light);
+    --analysis-border-color-light: rgba(0, 0, 0, 0.12);
+    --blockquote-bg-light: rgba(26, 115, 232, 0.05);
+    --blockquote-border-light: var(--primary-color-light);
+    --footer-bg-light: #f8f9fa;
+    --footer-text-light: var(--text-secondary-color-light);
+    --footer-border-light: var(--border-color-light);
+
+
+    /* Default to dark theme variables */
+    --primary-color: var(--primary-color-dark);
+    --link-color: var(--link-color-dark);
+    --background-color: var(--background-color-dark);
+    --card-background-color: var(--card-background-color-dark);
+    --text-color: var(--text-color-dark);
+    --text-secondary-color: var(--text-secondary-color-dark);
+    --border-color: var(--border-color-dark);
+    --tag-bg-color: var(--tag-bg-color-dark);
+    --tag-text-color: var(--tag-text-color-dark);
+    --tag-active-bg-color: var(--tag-active-bg-color-dark);
+    --tag-active-text-color: var(--tag-active-text-color-dark);
+    --box-shadow-main: 0 1px 2px var(--box-shadow-color-dark), 0 2px 6px var(--box-shadow-color-dark);
+    --box-shadow-hover-main: 0 2px 4px var(--box-shadow-hover-color-dark), 0 4px 12px var(--box-shadow-hover-color-dark);
+    --current-header-bg-color: var(--header-bg-color-dark);
+    --current-button-hover-bg: var(--button-hover-bg-dark);
+    --current-button-hover-text: var(--button-hover-text-dark);
+    --current-icon-color: var(--icon-color-dark);
+    --current-search-icon-color: var(--search-icon-color-dark);
+    --current-clear-search-hover-bg: var(--clear-search-hover-bg-dark);
+    --current-table-header-bg: var(--table-header-bg-dark);
+    --current-table-row-even-bg: var(--table-row-even-bg-dark);
+    --current-table-row-hover-bg: var(--table-row-hover-bg-dark);
+    --current-sidebar-header-bg: var(--sidebar-header-bg-dark);
+    --current-sidebar-header-text: var(--sidebar-header-text-dark);
+    --current-sidebar-nav-item-hover-bg: var(--sidebar-nav-item-hover-bg-dark);
+    --current-sidebar-nav-item-active-bg: var(--sidebar-nav-item-active-bg-dark);
+    --current-sidebar-nav-item-active-border: var(--sidebar-nav-item-active-border-dark);
+    --current-sidebar-icon-color: var(--sidebar-icon-color-dark);
+    --current-card-header-bg: var(--card-header-bg-dark);
+    --current-card-header-text: var(--card-header-text-dark);
+    --current-verse-ref-color: var(--verse-ref-color-dark);
+    --current-analysis-border-color: var(--analysis-border-color-dark);
+    --current-blockquote-bg: var(--blockquote-bg-dark);
+    --current-blockquote-border: var(--blockquote-border-dark);
+    --current-footer-bg: var(--footer-bg-dark);
+    --current-footer-text: var(--footer-text-dark);
+    --current-footer-border: var(--footer-border-dark);
+
+
+    --border-radius-main: 28px;
+    --border-radius-card: 16px;
+    --font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html[data-theme="light"] {
+    --primary-color: var(--primary-color-light);
+    --link-color: var(--link-color-light);
+    --background-color: var(--background-color-light);
+    --card-background-color: var(--card-background-color-light);
+    --text-color: var(--text-color-light);
+    --text-secondary-color: var(--text-secondary-color-light);
+    --border-color: var(--border-color-light);
+    --tag-bg-color: var(--tag-bg-color-light);
+    --tag-text-color: var(--tag-text-color-light);
+    --tag-active-bg-color: var(--tag-active-bg-color-light);
+    --tag-active-text-color: var(--tag-active-text-color-light);
+    --box-shadow-main: 0 1px 3px var(--box-shadow-color-light), 0 1px 2px var(--box-shadow-color-light);
+    --box-shadow-hover-main: 0 2px 6px var(--box-shadow-hover-color-light), 0 2px 4px var(--box-shadow-hover-color-light);
+    --current-header-bg-color: var(--header-bg-color-light);
+    --current-button-hover-bg: var(--button-hover-bg-light);
+    --current-button-hover-text: var(--button-hover-text-light);
+    --current-icon-color: var(--icon-color-light);
+    --current-search-icon-color: var(--search-icon-color-light);
+    --current-clear-search-hover-bg: var(--clear-search-hover-bg-light);
+    --current-table-header-bg: var(--table-header-bg-light);
+    --current-table-row-even-bg: var(--table-row-even-bg-light);
+    --current-table-row-hover-bg: var(--table-row-hover-bg-light);
+    --current-sidebar-header-bg: var(--sidebar-header-bg-light);
+    --current-sidebar-header-text: var(--sidebar-header-text-light);
+    --current-sidebar-nav-item-hover-bg: var(--sidebar-nav-item-hover-bg-light);
+    --current-sidebar-nav-item-active-bg: var(--sidebar-nav-item-active-bg-light);
+    --current-sidebar-nav-item-active-border: var(--sidebar-nav-item-active-border-light);
+    --current-sidebar-icon-color: var(--sidebar-icon-color-light);
+    --current-card-header-bg: var(--card-header-bg-light);
+    --current-card-header-text: var(--card-header-text-light);
+    --current-verse-ref-color: var(--verse-ref-color-light);
+    --current-analysis-border-color: var(--analysis-border-color-light);
+    --current-blockquote-bg: var(--blockquote-bg-light);
+    --current-blockquote-border: var(--blockquote-border-light);
+    --current-footer-bg: var(--footer-bg-light);
+    --current-footer-text: var(--footer-text-light);
+    --current-footer-border: var(--footer-border-light);
+
+    /* Specific overrides for chart.js in light mode if needed */
+    /* Chart.js usually adapts well if text colors are set, but explicit overrides can be added */
+    --chart-grid-color: var(--border-color-light);
+    --chart-ticks-color: var(--text-secondary-color-light);
+    --chart-title-color: var(--text-secondary-color-light);
+    --chart-tooltip-bg: var(--card-background-color-light);
+    --chart-tooltip-text: var(--text-color-light);
+    --chart-tooltip-border: var(--border-color-light);
+}
+
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 40px; /* Existing padding */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px; /* Consider if contradictions page needs wider max-width */
+    margin: 0 auto;
+    padding: 0 10px;
+    flex-grow: 1;
+}
+
+/* Header on index.html */
+header:not(.page-title-container) { /* Target only the main index.html header */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header:not(.page-title-container) h1 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header:not(.page-title-container) h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header on page.html (and potentially contradictions if it uses similar structure) */
+.page-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This will push title and button apart */
+    margin-bottom: 30px;
+    background-color: var(--current-header-bg-color); /* Themed background */
+    padding: 10px; /* Add some padding */
+    border-radius: var(--border-radius-card); /* Optional: match card radius */
+    box-shadow: var(--box-shadow-main); /* Optional: add shadow */
+}
+
+.page-title-container h1 { /* Title in page.html header */
+    font-size: 1.8em;
+    color: var(--text-color);
+    font-weight: 400;
+    margin: 0; /* Remove default margin */
+}
+.page-title-container h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.back-button {
+    text-decoration: none;
+    color: var(--primary-color);
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-main);
+    border: 1px solid var(--primary-color);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.back-button:hover {
+    background-color: var(--primary-color);
+    color: var(--tag-active-text-color); /* Use variable for contrast */
+}
+
+.back-button .material-icons {
+    font-size: 20px;
+}
+
+.search-container {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--current-search-icon-color);
+    pointer-events: none;
+    font-size: 22px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 45px 14px 50px;
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-main);
+    font-size: 1em;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 30%, transparent);
+}
+
+
+.clear-search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: var(--text-secondary-color);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.clear-search-button .material-icons {
+    font-size: 20px;
+}
+
+.clear-search-button:hover {
+    color: var(--text-color);
+    background-color: var(--current-clear-search-hover-bg);
+}
+
+.clear-search-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+
+.tag-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: normal;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.tag-filter-container::-webkit-scrollbar {
+    height: 8px;
+}
+.tag-filter-container::-webkit-scrollbar-track {
+    background: var(--card-background-color);
+    border-radius: 4px;
+}
+.tag-filter-container::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--text-secondary-color) 50%, transparent);
+    border-radius: 4px;
+}
+.tag-filter-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary-color);
+}
+
+.tag-filter-button {
+    background-color: var(--tag-bg-color);
+    color: var(--tag-text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: var(--border-radius-main);
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.tag-filter-button:hover:not(.active) {
+    background-color: color-mix(in srgb, var(--tag-bg-color) 80%, var(--text-color) 20%);
+    color: var(--text-color);
+    border-color: color-mix(in srgb, var(--border-color) 80%, var(--text-color) 20%);
+    transform: translateY(-1px);
+}
+
+.tag-filter-button.active {
+    background-color: var(--tag-active-bg-color);
+    color: var(--tag-active-text-color);
+    border-color: var(--tag-active-bg-color);
+    font-weight: 500;
+    transform: translateY(0);
+    border-width: 1px;
+    box-shadow: none;
+}
+@media (max-width: 768px) {
+    .tag-filter-button {
+        padding: 6px 12px; /* Original: 8px 15px */
+        font-size: 0.8em;  /* Original: 0.9em */
+    }
+
+    .tag-filter-container {
+        gap: 8px; /* Original: 10px, adjust if needed */
+        /* You might also want to reduce padding-bottom if it's too much */
+        /* padding-bottom: 10px; */ /* Original: 15px */
+    }
+}
+.argument-list {
+    display: grid;
+    gap: 15px;
+}
+
+.argument-card {
+    background-color: var(--card-background-color);
+    border-radius: var(--border-radius-card);
+    padding: 20px 22px;
+    box-shadow: var(--box-shadow-main);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, background-color 0.3s ease, border-color 0.2s;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid transparent; /* For hover effect */
+    position: relative;
+}
+
+.argument-card:hover {
+    box-shadow: var(--box-shadow-hover-main);
+    transform: translateY(-2px);
+    background-color: color-mix(in srgb, var(--card-background-color) 90%, var(--primary-color) 10%);
+    border-color: var(--primary-color);
+}
+
+.argument-card-icon {
+    font-size: 24px;
+    color: var(--current-icon-color);
+    margin-right: 15px;
+    margin-top: 1px;
+}
+
+.argument-card-content h2 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.argument-card-content p {
+    margin-bottom: 0;
+    font-size: 0.95em;
+    color: var(--text-secondary-color);
+    line-height: 1.5;
+}
+
+.argument-card-tags {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.card-tag {
+    background-color: var(--tag-bg-color);
+    color: var(--tag-text-color);
+    font-size: 0.75em;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+/* Page.html content styling adjustments */
+.page-content {
+    background-color: var(--card-background-color);
+    padding: 25px 30px;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-main);
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.page-content h2#argumentTitle { /* Main argument title on page.html */
+    color: var(--primary-color);
+    font-size: 1.9em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    line-height: 1.3;
+}
+
+.page-content h3 { /* Subheadings like "The Christian Argument" */
+    color: var(--text-color);
+    font-size: 1.25em;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.page-content p, .page-content ul, .page-content li {
+    color: var(--text-secondary-color);
+    font-size: 1em;
+}
+.page-content strong {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.page-content ul {
+    padding-left: 20px;
+}
+
+.page-content ul li {
+    margin-bottom: 8px;
+}
+
+.page-content a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+.page-content a:hover {
+    text-decoration: none;
+    color: color-mix(in srgb, var(--link-color) 80%, var(--text-color) 20%);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.85em;
+    color: var(--current-footer-text);
+    margin-top: 40px;
+    border-top: 1px solid var(--current-footer-border);
+    background-color: var(--current-footer-bg);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+footer p {
+    margin: 0;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--text-secondary-color);
+    padding: 20px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.clear-filters-button {
+    display: block;
+    margin: 10px auto 20px auto;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--tag-active-text-color); /* Use variable for contrast */
+    border: none;
+    border-radius: var(--border-radius-main);
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.clear-filters-button:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 80%, var(--text-color) 20%);
+    transform: translateY(-1px);
+}/* Table styles */
+.page-content .table-responsive-wrapper {
+    margin: 25px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-main);
+    background-color: var(--card-background-color); /* Ensures wrapper has bg */
+    overflow-x: auto; /* Add this line */
+}
+
+.page-content table.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    
+}
+
+.page-content table.comparison-table thead tr {
+    background-color: var(--current-table-header-bg);
+}
+
+.page-content table.comparison-table th {
+    padding: 12px 15px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: left;
+    border-bottom: 2px solid var(--primary-color);
+    border-right: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.page-content table.comparison-table th:last-child {
+    border-right: none;
+}
+
+.page-content table.comparison-table td {
+    padding: 12px 15px;
+    color: var(--text-secondary-color);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.page-content table.comparison-table td:last-child {
+    border-right: none;
+}
+
+.page-content table.comparison-table td a {
+    color: var(--link-color);
+}
+
+.page-content table.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.page-content table.comparison-table tbody tr:nth-of-type(even) {
+    background-color: var(--current-table-row-even-bg);
+}
+.page-content table.comparison-table tbody tr:nth-of-type(odd) {
+    background-color: var(--card-background-color); /* Explicit for odd rows */
+}
+
+.page-content table.comparison-table tbody tr:hover {
+    background-color: var(--current-table-row-hover-bg);
+}
+.page-content table.comparison-table tbody tr:hover td {
+    color: var(--text-color);
+}
+
+.page-content table.comparison-table .manuscript-status {
+    display: inline-block;
+    padding: 0.3em 0.7em;
+    border-radius: var(--border-radius-main);
+    font-size: 0.85em;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin: 2px 0;
+}
+
+.page-content table.comparison-table .manuscript-status.fragment {
+    background-color: #d9534f; /* Reddish */
+    color: white;
+    border: 1px solid #c9302c;
+}
+
+.page-content table.comparison-table .manuscript-status.complete {
+    background-color: #5cb85c; /* Green */
+    color: white;
+    border: 1px solid #4cae4c;
+}
+
+.page-content table.comparison-table .manuscript-status.partial {
+    background-color: #f0ad4e; /* Orange */
+    color: #1e1e1e;
+    border: 1px solid #eea236;
+}
+
+/* Responsive adjustments for tables on mobile */
+@media (max-width: 768px) {
+    .page-content table.comparison-table {
+        /* Increased min-width to better accommodate wide content and ensure scroll */
+    }
+
+    .page-content table.comparison-table th,
+    .page-content table.comparison-table td {
+        padding: 10px 12px; /* Slightly reduce padding */
+    }
+
+    .page-content table.comparison-table .manuscript-status {
+        font-size: 0.75em; /* Even smaller for status tags */
+        padding: 0.2em 0.5em;
+    }
+}
+
+@media (max-width: 480px) { /* For smaller phone screens */
+    .page-content table.comparison-table {
+        /* Adjusted for very small screens, but still ensuring scroll */
+        min-width: 650px; 
+        font-size: 0.8em; /* Further reduce font size */
+    }
+
+    .page-content table.comparison-table th,
+    .page-content table.comparison-table td {
+        padding: 8px 10px; /* Further reduce padding */
+    }
+}
+
+/* Content sections within page.html */
+.page-content .content-section { /* General content section styling */
+    margin-bottom: 2rem;
+    /* background, padding, etc. are handled by .page-content or specific contradiction styles */
+}
+/* For contradictions page, specific styling is below */
+
+
+.page-content .content-section h2:not(#argumentTitle) { /* Titles within page content, e.g., "Earliest Gospel Manuscripts" */
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 700;
+}
+
+.page-content .content-section h3:not(#counterTitle):not(#christianArgumentSection h3) { /* e.g., "Gospels" under Textual Variants */
+    font-size: 1.2em;
+    color: var(--text-color);
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+/* Styles for .evidence-item (blockquote style) */
+.page-content .evidence-item {
+    background: var(--current-blockquote-bg);
+    border-left: 3px solid var(--current-blockquote-border);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
+}
+
+.page-content .evidence-item h4,
+.page-content .evidence-item h5 { /* For sub-subheadings within evidence items */
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1em;
+}
+
+
+/* Pauline Letters Page Specific Styles */
+.page-content .pauline-intro,
+.page-content .pauline-conclusion {
+    margin-bottom: 2rem;
+    font-size: 1em;
+    line-height: 1.7;
+}
+.page-content .pauline-intro p,
+.page-content .pauline-conclusion p {
+    margin-bottom: 1em;
+}
+.page-content .pauline-conclusion ul {
+    margin-top: 0.5em;
+}
+
+.page-content .letter-category-section {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.page-content .letter-category-title {
+    font-size: 1.7em;
+    color: var(--text-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.page-content .letter-category-description {
+    font-size: 0.95em;
+    color: var(--text-secondary-color);
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.page-content .letter-entry-section {
+    background-color: var(--card-background-color);
+    padding: 20px 25px;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-main);
+    margin-bottom: 2.5rem;
+    border-left: 4px solid var(--border-color);
+    transition: border-left-color 0.3s ease;
+}
+.page-content .letter-entry-section:hover {
+    border-left-color: var(--primary-color);
+}
+
+.page-content .letter-entry-title {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+.page-content .letter-status-inline {
+    display: inline-block;
+    padding: 0.2em 0.6em;
+    border-radius: 10px;
+    font-size: 0.7em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 10px;
+    position: relative;
+    top: -2px;
+    color: white; /* Default, overridden by specific status */
+}
+
+.page-content .letter-status-inline.authentic {
+    background-color: #5cb85c; /* Green */
+}
+
+.page-content .letter-status-inline.disputed {
+    background-color: #f0ad4e; /* Orange */
+    color: #1e1e1e;
+}
+
+.page-content .letter-status-inline.pseudonymous {
+    background-color: #d9534f; /* Red */
+}
+
+.page-content .letter-entry-date {
+    font-size: 0.9em;
+    color: var(--text-secondary-color);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.page-content .letter-entry-key-facts {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-content .letter-entry-key-facts p {
+    font-size: 0.95em;
+    color: var(--text-secondary-color);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+.page-content .letter-entry-key-facts p strong {
+    color: var(--text-color);
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.page-content .letter-entry-summary {
+    font-size: 1em;
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.page-content .letter-entry-evidence h4 {
+    font-size: 1.1em;
+    color: var(--text-color);
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+.page-content .letter-entry-evidence h4:first-child {
+    margin-top: 0;
+}
+
+.page-content .letter-entry-evidence ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+
+.page-content .letter-entry-evidence li {
+    font-size: 0.95em;
+    color: var(--text-secondary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Styles for Contradictions Page (from contradictions.html, adapted) */
+/* This assumes the HTML structure from newContradictionsEntry is injected */
+.contradictions-container .search-container { /* Scoped search for contradictions page */
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contradictions-container #contradiction-search { /* Specific ID for contradictions search */
+    width: 100%;
+    padding: 1rem 1.5rem 1rem 3rem; /* Left padding for icon */
+    font-size: 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-main); /* Use main radius */
+    box-shadow: var(--box-shadow-main);
+    transition: var(--transition);
+    background-color: var(--card-background-color); /* Themed */
+    color: var(--text-color); /* Themed */
+}
+
+.contradictions-container #contradiction-search:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 30%, transparent);
+}
+
+.contradictions-container .search-icon { /* Scoped search icon */
+    position: absolute;
+    left: 1.2rem; /* Adjusted */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary-color);
+    font-size: 1.1rem;
+}
+
+
+.contradictions-container .two-column-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.contradictions-container .main-column {
+    flex: 1;
+}
+
+.contradictions-container .sidebar {
+    width: 300px; /* Or make it responsive */
+    background-color: var(--card-background-color); /* Themed */
+    border-radius: var(--border-radius-card); /* Use card radius */
+    box-shadow: var(--box-shadow-main);
+    position: sticky;
+    top: 100px; /* Adjust based on your fixed header height, if any */
+    max-height: calc(100vh - 120px); /* Adjust */
+    overflow-y: auto;
+    padding-bottom: 10px; /* Space at bottom of sidebar */
+    border: 1px solid var(--border-color);
+}
+
+.contradictions-container .sidebar-header {
+    background-color: var(--current-sidebar-header-bg); /* Themed */
+    color: var(--current-sidebar-header-text); /* Themed */
+    padding: 15px;
+    border-top-left-radius: var(--border-radius-card); /* Match parent */
+    border-top-right-radius: var(--border-radius-card); /* Match parent */
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contradictions-container .sidebar-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: inherit; /* Inherit from parent */
+}
+.contradictions-container .sidebar-header i {
+    color: inherit; /* Inherit from parent */
+}
+
+
+.contradictions-container .sidebar-nav {
+    padding: 10px 0;
+}
+
+.contradictions-container .sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-color); /* Themed */
+    transition: all 0.2s;
+    gap: 12px;
+    border-left: 4px solid transparent; /* For active state */
+}
+
+.contradictions-container .sidebar-nav-item:hover {
+    background-color: var(--current-sidebar-nav-item-hover-bg); /* Themed */
+    color: var(--primary-color);
+}
+.contradictions-container .sidebar-nav-item:hover i {
+    color: var(--primary-color);
+}
+
+
+.contradictions-container .sidebar-nav-item.active {
+    background-color: var(--current-sidebar-nav-item-active-bg); /* Themed */
+    border-left-color: var(--current-sidebar-nav-item-active-border); /* Themed */
+    padding-left: 16px; /* Indent slightly */
+    color: var(--primary-color); /* Highlight active link text */
+    font-weight: 600;
+}
+.contradictions-container .sidebar-nav-item.active i {
+     color: var(--primary-color);
+}
+
+
+.contradictions-container .sidebar-nav-item i {
+    font-size: 1.1rem;
+    width: 22px;
+    text-align: center;
+    color: var(--current-sidebar-icon-color); /* Themed */
+    transition: color 0.2s;
+}
+
+.contradictions-container .content-section { /* Scoped for contradictions page */
+    margin-bottom: 3rem;
+    background: transparent; /* Let page-content handle background */
+    border-radius: 0; /* No individual radius if inside .page-content */
+    padding: 0; /* No individual padding if inside .page-content */
+    box-shadow: none; /* No individual shadow if inside .page-content */
+    scroll-margin-top: 100px; /* Adjust for sticky header */
+}
+
+.contradictions-container .content-section:last-child {
+    margin-bottom: 0;
+}
+
+.contradictions-container .content-section h2 { /* Scoped for contradictions page */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color); /* Use primary for emphasis */
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contradictions-container .content-section h2 i {
+    font-size: 1.5rem;
+    color: var(--primary-color); /* Ensure icon matches text */
+}
+
+
+.contradictions-container .contradiction-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contradictions-container .card {
+    background-color: var(--card-background-color); /* Themed */
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-main);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.contradictions-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover-main);
+    border-color: var(--primary-color);
+}
+
+.contradictions-container .card-header {
+    background-color: var(--current-card-header-bg); /* Themed */
+    color: var(--current-card-header-text); /* Themed */
+    padding: 1.2rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contradictions-container .card-category { /* This was in contradictions.html, might not be used by new data */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: color-mix(in srgb, var(--current-card-header-text) 20%, transparent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--current-card-header-text);
+}
+
+.contradictions-container .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    padding-right: 80px; /* If .card-category is used */
+    color: inherit; /* Inherit from .card-header */
+}
+
+.contradictions-container .card-description { /* This was in contradictions.html, might not be used */
+    font-size: 0.9rem;
+    opacity: 0.9;
+    color: inherit; /* Inherit from .card-header */
+}
+
+.contradictions-container .card-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contradictions-container .evidence-item { /* Scoped and themed */
+    margin-bottom: 1.5rem;
+    background: var(--current-blockquote-bg);
+    border-left: 3px solid var(--current-blockquote-border);
+    padding: 1.2rem;
+    border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
+}
+.contradictions-container .evidence-item:last-of-type {
+     margin-bottom: 1rem;
+}
+
+.contradictions-container .verse {
+    margin-bottom: 1rem;
+}
+.contradictions-container .verse:last-child {
+    margin-bottom: 0;
+}
+
+.contradictions-container .verse-reference {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--current-verse-ref-color); /* Themed */
+    margin-bottom: 0.5rem;
+}
+
+.contradictions-container .verse-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary-color); /* Themed */
+}
+
+.contradictions-container .analysis {
+    font-size: 0.9rem;
+    color: var(--text-secondary-color); /* Themed */
+    line-height: 1.6;
+    margin-top: auto; /* Pushes to bottom if card body is flex */
+    padding-top: 1rem;
+    border-top: 1px solid var(--current-analysis-border-color); /* Themed */
+}
+
+.contradictions-container .footnote { /* Scoped */
+    opacity: 0.7;
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    text-align: center;
+    color: var(--text-secondary-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary-color);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle-button:hover {
+    color: var(--primary-color);
+    background-color: var(--current-button-hover-bg);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle-button .material-icons {
+    font-size: 22px;
+}
+
+
+/* Responsive adjustments for contradictions page if needed */
+@media (max-width: 992px) {
+    .contradictions-container .two-column-layout {
+        flex-direction: column;
+    }
+    .contradictions-container .sidebar {
+        width: 100%;
+        position: relative; /* Changed from sticky for stacked layout */
+        top: 0;
+        margin-bottom: 30px;
+        max-height: none; /* Allow full height */
+        overflow-y: visible; /* Allow content to flow */
+    }
+}
+
+/* Chart.js specific theme overrides */
+/* These are fallback if JS doesn't pick up CSS vars correctly, or for fine-tuning */
+.chart-container-wrapper {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--card-background-color) !important; /* Ensure this applies */
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-main);
+}
+
+.chart-container-wrapper h4 {
+    text-align: center;
+    color: var(--text-color) !important; /* Ensure this applies */
+    margin-top:0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+.chart-container-wrapper p {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--text-secondary-color) !important; /* Ensure this applies */
+    margin-top: 10px;
+}
+.chart-container-wrapper details summary {
+    cursor: pointer;
+    color: var(--primary-color) !important; /* Ensure this applies */
+    font-weight: 500;
+}
+.chart-container-wrapper details ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    color: var(--text-secondary-color) !important; /* Ensure this applies */
+}
+
+
+/* Ensure Material Icons are available */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centers flex-items, but we’ll override for the button */
+    width: 97%;
+    padding: 1rem; /* or whatever vertical padding you prefer */
+  }
+  
+  .header-inner h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+  
+  .header-inner .theme-toggle-button {
+    position: absolute;
+    right: 1rem;            /* distance from the right edge */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    cursor: pointer;
+  }
+  html[data-theme="light"] .contradictions-container .card-header .card-title {
+    color: #ffffff !important;
+  }
+/* Apostle Card Specific Styling */
+/* Ensure this is placed after your existing :root and general styles in style.css */
+
+/* Main apostle card container - already styled by .page-content .apostle-card */
+/* but we can ensure some defaults if they are part of page-content */
+.page-content .apostle-card {
+    background-color: var(--card-background-color);
+    border-radius: var(--border-radius-card);
+    margin-bottom: 2rem; /* Consistent spacing between cards */
+    box-shadow: var(--box-shadow-main);
+    border: 1px solid var(--border-color);
+    overflow: hidden; /* Ensures child elements don't break the border radius */
+}
+
+.page-content .apostle-header {
+    padding: 1.5rem;
+    /* Using a slightly desaturated version of primary for a softer header, or a gradient */
+    background: linear-gradient(135deg, var(--primary-color), color-mix(in srgb, var(--primary-color) 70%, var(--background-color)));
+    color: var(--tag-active-text-color); /* Ensure text is readable on the gradient */
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-content .apostle-title {
+    font-size: 1.6em; /* Slightly larger title */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    color: inherit; /* Inherits from .apostle-header */
+}
+
+.page-content .apostle-date {
+    font-size: 0.9em;
+    opacity: 0.85;
+    margin-bottom: 0;
+    color: inherit; /* Inherits from .apostle-header */
+}
+
+.page-content .evidence-status-large {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.85em;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-main);
+    font-weight: 600;
+    color: #fff; /* White text for all statuses for consistency */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.page-content .evidence-status-large.strong {
+    background-color: #5cb85c; /* Green */
+    border: 1px solid #4cae4c;
+}
+
+.page-content .evidence-status-large.moderate {
+    background-color: #f0ad4e; /* Orange */
+    border: 1px solid #eea236;
+    color: #1e1e1e; /* Darker text for better contrast on orange */
+}
+
+.page-content .evidence-status-large.weak {
+    background-color: #d9534f; /* Red */
+    border: 1px solid #c9302c;
+}
+
+.page-content .apostle-body {
+    padding: 1.5rem;
+}
+
+.page-content .apostle-body > p:first-of-type { /* The main descriptive paragraph */
+    font-size: 1em;
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Styles for the Apostle Search Bar */
+.page-content .apostle-search-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.page-content .apostle-search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+}
+
+.page-content #apostle-search-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem; /* Padding for icon */
+    font-size: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-main);
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.page-content #apostle-search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+.page-content .apostle-search-icon {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary-color);
+    font-size: 1.2em; /* Adjust icon size */
+    pointer-events: none; /* So it doesn't interfere with input focus */
+}
+
+
+.page-content .evidence-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Two columns for wider screens */
+@media (min-width: 768px) {
+    .page-content .evidence-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.page-content .evidence-for,
+.page-content .evidence-against {
+    background-color: color-mix(in srgb, var(--card-background-color) 50%, var(--background-color) 50%);
+    padding: 1.2rem;
+    border-radius: calc(var(--border-radius-card) - 5px);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Subtle inner shadow */
+}
+
+.page-content .evidence-for {
+    border-top: 3px solid #5cb85c; /* Green accent */
+}
+
+.page-content .evidence-against {
+    border-top: 3px solid #d9534f; /* Red accent */
+}
+
+.page-content .evidence-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.page-content .evidence-heading i.fas { /* Font Awesome icons */
+    margin-right: 0.75rem;
+    font-size: 1.2em; /* Slightly larger icon */
+}
+
+.page-content .evidence-for .evidence-heading {
+    color: #5cb85c; /* Green */
+}
+.page-content .evidence-for .evidence-heading i.fas {
+    color: #5cb85c;
+}
+
+.page-content .evidence-against .evidence-heading {
+    color: #d9534f; /* Red */
+}
+.page-content .evidence-against .evidence-heading i.fas {
+    color: #d9534f;
+}
+
+.page-content .evidence-for ul,
+.page-content .evidence-against ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.page-content .evidence-for li,
+.page-content .evidence-against li {
+    font-size: 0.95em;
+    color: var(--text-secondary-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    padding-left: 1.5em; /* Space for custom bullet */
+    position: relative;
+}
+
+/* Custom bullets for lists */
+.page-content .evidence-for li::before {
+    content: '\2022'; /* Unicode bullet */
+    color: #5cb85c; /* Green bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    position: absolute;
+    left: 0.25em;
+
+}
+
+.page-content .evidence-against li::before {
+    content: '\2022'; /* Unicode bullet */
+    color: #d9534f; /* Red bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    position: absolute;
+    left: 0.25em;
+}
+
+.page-content .evidence-for li a,
+.page-content .evidence-against li a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+.page-content .evidence-for li a:hover,
+.page-content .evidence-against li a:hover {
+    text-decoration: none;
+}
+
+/* Quote block styling from apostles.html, adapted for theme */
+.page-content .quote-block {
+    margin: 2rem 0;
+    background: var(--current-blockquote-bg); /* Use themed variable */
+    border-left: 4px solid var(--current-blockquote-border); /* Use themed variable */
+    padding: 1.5rem 2rem;
+    border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
+    font-style: italic;
+    position: relative;
+}
+
+.page-content .quote-block:before {
+    content: '"';
+    font-size: 4rem;
+    color: color-mix(in srgb, var(--primary-color) 20%, transparent); /* Themed quote mark */
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 0;
+}
+
+.page-content .quote-block p {
+    position: relative; /* To ensure text is above the pseudo-element */
+    z-index: 1;
+    color: var(--text-secondary-color); /* Themed text */
+}
+
+.page-content .quote-block p:first-of-type {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: var(--text-color); /* Main quote text slightly more prominent */
+}
+
+.page-content .quote-block p:last-of-type { /* Attribution */
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--primary-color); /* Themed attribution */
+    font-style: normal;
+}
+.page-content .quote-block p:last-of-type a {
+    color: inherit; /* Inherit color from parent for the link */
+    text-decoration: underline;
+}
+.page-content .quote-block p:last-of-type a:hover {
+    text-decoration: none;
+}
+
+/* Ensure Font Awesome icons are styled if not already globally done */
+.page-content .fas {
+    line-height: inherit; /* Helps with vertical alignment */
+}
+
+/* style.css */
+
+/* ... existing styles ... */
+
+@media (max-width: 600px) {
+    /* Ensure the search container can act as a positioning parent */
+    .header-inner a {
+        font-size: 2rem;
+    }
+}
+  
+  .header-inner h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+  
+  .header-inner .theme-toggle-button {
+    position: absolute;
+    right: 1rem;            /* distance from the right edge */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    cursor: pointer;
+  }
+  html[data-theme="light"] .contradictions-container .card-header .card-title {
+    color: #ffffff !important;
+  }
+/* Apostle Card Specific Styling */
+/* Ensure this is placed after your existing :root and general styles in style.css */
+
+/* Main apostle card container - already styled by .page-content .apostle-card */
+/* but we can ensure some defaults if they are part of page-content */
+.page-content .apostle-card {
+    background-color: var(--card-background-color);
+    border-radius: var(--border-radius-card);
+    margin-bottom: 2rem; /* Consistent spacing between cards */
+    box-shadow: var(--box-shadow-main);
+    border: 1px solid var(--border-color);
+    overflow: hidden; /* Ensures child elements don't break the border radius */
+}
+
+.page-content .apostle-header {
+    padding: 1.5rem;
+    /* Using a slightly desaturated version of primary for a softer header, or a gradient */
+    background: linear-gradient(135deg, var(--primary-color), color-mix(in srgb, var(--primary-color) 70%, var(--background-color)));
+    color: var(--tag-active-text-color); /* Ensure text is readable on the gradient */
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-content .apostle-title {
+    font-size: 1.6em; /* Slightly larger title */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    color: inherit; /* Inherits from .apostle-header */
+}
+
+.page-content .apostle-date {
+    font-size: 0.9em;
+    opacity: 0.85;
+    margin-bottom: 0;
+    color: inherit; /* Inherits from .apostle-header */
+}
+
+.page-content .evidence-status-large {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.85em;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-main);
+    font-weight: 600;
+    color: #fff; /* White text for all statuses for consistency */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.page-content .evidence-status-large.strong {
+    background-color: #5cb85c; /* Green */
+    border: 1px solid #4cae4c;
+}
+
+.page-content .evidence-status-large.moderate {
+    background-color: #f0ad4e; /* Orange */
+    border: 1px solid #eea236;
+    color: #1e1e1e; /* Darker text for better contrast on orange */
+}
+
+.page-content .evidence-status-large.weak {
+    background-color: #d9534f; /* Red */
+    border: 1px solid #c9302c;
+}
+
+.page-content .apostle-body {
+    padding: 1.5rem;
+}
+
+.page-content .apostle-body > p:first-of-type { /* The main descriptive paragraph */
+    font-size: 1em;
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Styles for the Apostle Search Bar */
+.page-content .apostle-search-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.page-content .apostle-search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+}
+
+.page-content #apostle-search-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem; /* Padding for icon */
+    font-size: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-main);
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.page-content #apostle-search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+.page-content .apostle-search-icon {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary-color);
+    font-size: 1.2em; /* Adjust icon size */
+    pointer-events: none; /* So it doesn't interfere with input focus */
+}
+
+
+.page-content .evidence-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Two columns for wider screens */
+@media (min-width: 768px) {
+    .page-content .evidence-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.page-content .evidence-for,
+.page-content .evidence-against {
+    background-color: color-mix(in srgb, var(--card-background-color) 50%, var(--background-color) 50%);
+    padding: 1.2rem;
+    border-radius: calc(var(--border-radius-card) - 5px);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Subtle inner shadow */
+}
+
+.page-content .evidence-for {
+    border-top: 3px solid #5cb85c; /* Green accent */
+}
+
+.page-content .evidence-against {
+    border-top: 3px solid #d9534f; /* Red accent */
+}
+
+.page-content .evidence-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.page-content .evidence-heading i.fas { /* Font Awesome icons */
+    margin-right: 0.75rem;
+    font-size: 1.2em; /* Slightly larger icon */
+}
+
+.page-content .evidence-for .evidence-heading {
+    color: #5cb85c; /* Green */
+}
+.page-content .evidence-for .evidence-heading i.fas {
+    color: #5cb85c;
+}
+
+.page-content .evidence-against .evidence-heading {
+    color: #d9534f; /* Red */
+}
+.page-content .evidence-against .evidence-heading i.fas {
+    color: #d9534f;
+}
+
+.page-content .evidence-for ul,
+.page-content .evidence-against ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.page-content .evidence-for li,
+.page-content .evidence-against li {
+    font-size: 0.95em;
+    color: var(--text-secondary-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    padding-left: 1.5em; /* Space for custom bullet */
+    position: relative;
+}
+
+/* Custom bullets for lists */
+.page-content .evidence-for li::before {
+    content: '\2022'; /* Unicode bullet */
+    color: #5cb85c; /* Green bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    position: absolute;
+    left: 0.25em;
+
+}
+
+.page-content .evidence-against li::before {
+    content: '\2022'; /* Unicode bullet */
+    color: #d9534f; /* Red bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    position: absolute;
+    left: 0.25em;
+}
+
+.page-content .evidence-for li a,
+.page-content .evidence-against li a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+.page-content .evidence-for li a:hover,
+.page-content .evidence-against li a:hover {
+    text-decoration: none;
+}
+
+/* Quote block styling from apostles.html, adapted for theme */
+.page-content .quote-block {
+    margin: 2rem 0;
+    background: var(--current-blockquote-bg); /* Use themed variable */
+    border-left: 4px solid var(--current-blockquote-border); /* Use themed variable */
+    padding: 1.5rem 2rem;
+    border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
+    font-style: italic;
+    position: relative;
+}
+
+.page-content .quote-block:before {
+    content: '"';
+    font-size: 4rem;
+    color: color-mix(in srgb, var(--primary-color) 20%, transparent); /* Themed quote mark */
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 0;
+}
+
+.page-content .quote-block p {
+    position: relative; /* To ensure text is above the pseudo-element */
+    z-index: 1;
+    color: var(--text-secondary-color); /* Themed text */
+}
+
+.page-content .quote-block p:first-of-type {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: var(--text-color); /* Main quote text slightly more prominent */
+}
+
+.page-content .quote-block p:last-of-type { /* Attribution */
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--primary-color); /* Themed attribution */
+    font-style: normal;
+}
+.page-content .quote-block p:last-of-type a {
+    color: inherit; /* Inherit color from parent for the link */
+    text-decoration: underline;
+}
+.page-content .quote-block p:last-of-type a:hover {
+    text-decoration: none;
+}
+
+/* Ensure Font Awesome icons are styled if not already globally done */
+.page-content .fas {
+    line-height: inherit; /* Helps with vertical alignment */
+}
+
+/* style.css */
+
+/* ... existing styles ... */
+
+@media (max-width: 600px) {
+    /* Ensure the search container can act as a positioning parent */
+    .header-inner a {
+        font-size: 2rem;
+    }
+}
+
+/* New styles for the .Verse class */
+/* New styles for the .verse class */
+.verse {
+    background-color: var(--card-background-color);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-main);
+    transition: all 0.2s ease-in-out;
+}
+
+.verse:hover {
+    box-shadow: var(--box-shadow-hover-main);
+    transform: translateY(-2px);
+    border-left-color: color-mix(in srgb, var(--primary-color) 80%, var(--text-color) 20%);
+}
+
+.verse .verse-text {
+    margin: 0;
+    font-size: 1em;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.verse .verse-reference {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--text-secondary-color);
+    text-align: right; /* Moved from inline style */
+    font-style: italic;
+}
+
+/* style.css */
+
+/* ... (your existing CSS) ... */
+
+/* Styles for the Prayer Journal section */
+.content-section pre.prayer-journal {
+    white-space: pre-wrap; /* Preserves whitespace and wraps text */
+    font-family: var(--font-family); /* Uses your global font */
+    font-size: 0.95rem; /* Slightly smaller font for journal entries */
+    line-height: 1.7; /* Good readability for blocks of text */
+    background: var(--card-background-color); /* Uses your themed card background */
+    padding: 1.5rem; /* Ample padding */
+    border-radius: var(--border-radius-card); /* Consistent border radius */
+    border: 1px solid var(--border-color); /* Themed border */
+    max-height: 400px; /* Limits height and adds scrollbar */
+    overflow-y: auto; /* Enables vertical scrolling when content overflows */
+    margin-top: 1.5rem; /* Spacing from the paragraph above */
+    color: var(--text-secondary-color); /* Text color, can be var(--text-color) if you prefer */
+    box-shadow: var(--box-shadow-main); /* Adds a subtle shadow */
+}
+
+/* Style for scrollbar for the prayer journal */
+.content-section pre.prayer-journal::-webkit-scrollbar {
+    width: 8px;
+}
+.content-section pre.prayer-journal::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 4px;
+}
+.content-section pre.prayer-journal::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--text-secondary-color) 50%, transparent);
+    border-radius: 4px;
+}
+.content-section pre.prayer-journal::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary-color);
+}

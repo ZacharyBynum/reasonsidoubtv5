@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasons I Doubt</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-inner">
+              <h1><a href="index.html">ReasonsIDoubt.com</a></h1>
+              <button id="themeToggleButton" class="theme-toggle-button" aria-label="Switch to light mode">
+                <span class="material-icons">light_mode</span>
+              </button>
+            </div>
+            <p class="subtitle" style="color: gray;">Explore common Christian arguments and data-based objections</p>
+          </header>
+          
+
+        <main>
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <span class="material-icons search-icon">search</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search arguments & content...">
+                    <button id="clearSearchButton" class="clear-search-button" aria-label="Clear search" style="display: none;">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tag-filter-container" id="tagFilterContainer">
+                </div>
+
+            <div class="argument-list" id="argumentList">
+                </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>© ReasonsIDoubt.com</p>
+    </footer>
+
+    <script src="content.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
